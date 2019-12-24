@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
 ```
 
 # 2:
-打开新页面  <font color="#FF0000">注意：打开方式错误将无法监听到页面的状态</>
+打开新页面  <font color="#FF0000">注意：打开方式错误将无法监听到页面的状态</font>
 ```yaml
 
 
