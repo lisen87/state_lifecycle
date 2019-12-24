@@ -19,8 +19,8 @@ import 'package:state_lifecycle/state_lifecycle.dart';
 
 
 # 1:
-# 在启动app的 MyApp 中 设置 navigatorObservers
-# 正确填写StateNavigatorObserver("MyHomePage")中的路由名称可以使根页面监听到页面状态,填写错误只会影响根页面无法监听页面状态，并不会影响其他页面
+在启动app的 MyApp 中 设置 navigatorObservers
+正确填写`StateNavigatorObserver("MyHomePage")`中的路由名称可以使根页面监听到页面状态,填写错误只会影响根页面无法监听页面状态，并不会影响其他页面
 
 ```yaml
 
@@ -41,8 +41,8 @@ class MyApp extends StatelessWidget {
 
 ```
 
-# 当使用`onGenerateRoute`时，配置的`initialRoute: "MyHomePage" ` 要和 StateNavigatorObserver("MyHomePage")中的路由名称一致
-# 填写错误只会影响根页面无法监听页面状态，并不会影响其他页面
+当使用`onGenerateRoute`时，配置的`initialRoute: "MyHomePage" ` 要和 `StateNavigatorObserver("MyHomePage")`中的路由名称一致
+填写错误只会影响根页面无法监听页面状态，并不会影响其他页面
 
 ```yaml
       
@@ -67,9 +67,10 @@ class MyApp extends StatelessWidget {
 ```
 
 # 2:
-# 打开新页面
+打开新页面 
 ```yaml
 
+//$\color{red}{注意：打开方式错误将无法监听到页面的状态}$
 //使用此方法打开新页面，如果想要页面跳转动画请参照RouterManager.normalRoute 返回动画路由即可
 Navigator.push(context, RouterManager.normalRoute(Page()));
 
@@ -82,7 +83,7 @@ Navigator.pushNamed(context, "APage");
 ```
 
 # 3:
-# 在需要监听状态的state中`with LifecycleMixin`
+在需要监听状态的state中`with LifecycleMixin`
 
 ```yaml
 class APageState extends State<APage> with LifecycleMixin{
@@ -111,6 +112,7 @@ class APageState extends State<APage> with LifecycleMixin{
   }
 }
 ```
+
 
 
 
