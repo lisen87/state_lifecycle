@@ -1,7 +1,7 @@
 # [state_lifecycle](https://github.com/lisen87/state_lifecycle)
 
-监听页面被其他页面覆盖状态（onPause）或者页面正在展示中的状态（onReTop）,不包含 app 按下home键切换到后台的监听
-The monitoring page is covered by other pages (onPause) or the page is being displayed (onReTop), excluding the app. Press the home button to switch to background monitoring
+* 监听页面被其他页面覆盖状态（onPause）或者页面正在展示中的状态（onReTop）,不包含 app 按下home键切换到后台的监听
+* The monitoring page is covered by other pages (onPause) or the page is being displayed (onReTop), excluding the app. Press the home button to switch to background monitoring
 > Supported  Platforms
 > * Android
 > * iOS
@@ -16,8 +16,8 @@ state_lifecycle: ^1.0.0
 ```dart
 import 'package:state_lifecycle/state_lifecycle.dart';
 ```
-## 思路：通过`navigatorObservers`监听路由跳转状态，通过 `navigatorObservers`中`didPop`和`didPush`中Route参数获取路由名称，从而监听页面状态
-## Idea: Monitor route status via `navigatorObservers`, and obtain route names via` didPop` and `didPush` in` navigatorObservers` to monitor page status
+### 思路：通过`navigatorObservers`监听路由跳转状态，通过 `navigatorObservers`中`didPop`和`didPush`中Route参数获取路由名称，从而监听页面状态
+### Idea: Monitor route status via `navigatorObservers`, and obtain route names via` didPop` and `didPush` in` navigatorObservers` to monitor page status
 
 # Step 1:
 在启动app的 MyApp 中 设置 `navigatorObservers`
@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
        //或者使用 onGenerateRoute
         onGenerateRoute: (RouteSettings settings) {
           if (settings.name == "MyHomePage") {
-            ## 如果想要页面跳转动画请参照RouterManager.normalRoute 返回动画路由即可
+            // 如果想要页面跳转动画请参照RouterManager.normalRoute 返回动画路由即可
             return RouterManager.normalRoute(MyHomePage(
               title: "Flutter Demo Home Page",
             ));
