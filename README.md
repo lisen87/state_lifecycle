@@ -67,10 +67,10 @@ class MyApp extends StatelessWidget {
 ```
 
 # 2:
-打开新页面  $\color{red}{注意：打开方式错误将无法监听到页面的状态}$
+打开新页面  \color{#FF0000}{注意：打开方式错误将无法监听到页面的状态}
 ```yaml
 
-//$\color{red}{注意：打开方式错误将无法监听到页面的状态}$
+
 //使用此方法打开新页面，如果想要页面跳转动画请参照RouterManager.normalRoute 返回动画路由即可
 Navigator.push(context, RouterManager.normalRoute(Page()));
 
