@@ -30,18 +30,18 @@ class MyApp extends StatelessWidget {
 //        },
 //      },
 
-      onGenerateRoute: (RouteSettings settings) {
-        if (settings.name == "MyHomePage") {
-          return RouterManager.normalRoute(MyHomePage(
-            title: "Flutter Demo Home Page",
-          ));
-        } else if (settings.name == "APage") {
-          return RouterManager.normalRoute(APage());
-        }
-        return null;
-      },
-      initialRoute: "MyHomePage",
-//      home: MyHomePage(title: 'Flutter Demo Home Page'),
+//      onGenerateRoute: (RouteSettings settings) {
+//        if (settings.name == "MyHomePage") {
+//          return RouterManager.normalRoute(MyHomePage(
+//            title: "Flutter Demo Home Page",
+//          ));
+//        } else if (settings.name == "APage") {
+//          return RouterManager.normalRoute(APage());
+//        }
+//        return null;
+//      },
+//      initialRoute: "MyHomePage",
+      home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -55,7 +55,7 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with LifecycleMixin {
+class _MyHomePageState extends State<MyHomePage> with LifecycleMixin{
   @override
   Widget build(BuildContext context) {
     return Scaffold(

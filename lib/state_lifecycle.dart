@@ -109,6 +109,7 @@ mixin LifecycleMixin <T extends StatefulWidget> on State<T> {
 
 class RouterManager {
 
+
   /// RouterManager.push(context, APage());
 
   static push(BuildContext context, Widget widget) {
@@ -132,4 +133,6 @@ class RouterManager {
         },
         settings: RouteSettings(name: widget.runtimeType.toString()));
   }
+
+  RouterManager._();
 }
